@@ -1,0 +1,12 @@
+{
+  "name": "itunes-api-sample",
+  "displayName": "itunes-api-sample",
+  "expo": {
+    "name": "itunes-api-sample",
+    "slug": "itunes-api-sample",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
