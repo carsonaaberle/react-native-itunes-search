@@ -1,21 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Provider } from "react-redux";
+import { rootReducer } from "./src/store/rootReducer";
+import HomeScreen from "./src/components/HomeScreen";
+
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
+
+import fetchArtistTracksSaga from "./src/sagas/fetchTracksSaga";
+
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware();
+// mount it on the Store
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+// then run the saga
+sagaMiddleware.run(fetchArtistTracksSaga);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
