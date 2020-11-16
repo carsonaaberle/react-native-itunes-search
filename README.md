@@ -1,7 +1,17 @@
-Step 1: Clone the directory
+**Steps for Mac**
 
-Step 2: Open the .xcworkspace file located at <ROOT_DIRECTORY>/ios
+`git clone https://github.com/carsonaaberle/react-native-itunes-search.git`
 
-Step 3: run `pod install` from <ROOT_DIRECTORY>/ios
+`cd react-native-itunes-search`
 
-Step 4: run `react-native run-ios` from <ROOT_DIRECTORY>
+`yarn install`
+
+`cd ./ios`
+
+`pod install`
+
+`cd ..`
+
+`react-native run-ios`
+
+**Hint: Search an abstract artist name such as "Dra" to see loading animation if internet is too fast
