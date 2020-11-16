@@ -14,6 +14,7 @@ export function* fetchItunesArtist(action) {
         artistSearchResults: artistSearchResponse.data.results,
       });
     } else {
+      //Test this by changing the API Url inside fetchArtist to a malformed request
       throw artistSearchResponse;
     }
   } catch (error) {
